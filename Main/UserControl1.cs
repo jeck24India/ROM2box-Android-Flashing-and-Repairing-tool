@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 using System.IO; // For Files reading and writting
 using System.Windows.Forms;
 using System.Diagnostics; // Add this Import
-using RegawMOD.Android; // Android lib imports
 
 namespace Main
 {

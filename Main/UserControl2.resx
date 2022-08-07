@@ -117,16 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox14.Text" xml:space="preserve">
+    <value>1. First we use 'Firmware Flasher 2' Method, if any error we use this Method 2. Please Check Firmware Folder, if there are Multiple rawprogram files you have write all partition info to single rawprogram0 or flash all one by one
+3. if phone is not booted after Flashing done, Flash patch0.xml load it under rawprogram0 file and Repeat the Flashing process
+</value>
+  </data>
   <data name="textBox12.Text" xml:space="preserve">
     <value>it's a Experiment and Not work Most of times, Please use Firehose for Same Board, try with different programmer, First Select Suitable Firehose, Then use EMMC Section for EMMC device and UFS Section for UFS device</value>
   </data>
   <data name="textBox11.Text" xml:space="preserve">
     <value>Select all Require files, Connect Phone in EDL Mod, Once Port detected click 'Download' If device Firmware contain Multiple rawprogram Files Flash all one by one or add partition data to single rawprogram0 file</value>
-  </data>
-  <data name="textBox14.Text" xml:space="preserve">
-    <value>1. First we use 'Firmware Flasher 2' Method, if any error we use this Method 2. Please Check Firmware Folder, if there are Multiple rawprogram files you have write 
-all partition info to single rawprogram0 or flash all one by one
-</value>
   </data>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>23, 10</value>

@@ -1,5 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.IO.Ports;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
@@ -9,47 +18,55 @@ namespace Main
 {
     public partial class Form1 : Form
     {
+        // Declaration of some variables...
+        Device device; AndroidController android = null; string serial;
+
         public Form1()
         {
 
             InitializeComponent();
-
+            android = AndroidController.Instance; // Setting Android instance
+            timer1.Interval = 200; // Setting timer interval to 2 milliseconds, This means it will check devices after every 2 milliseconds
+            timer1.Start(); // Start the Timer :)
         }
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+        [DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
         /// <summary>
-        /// below i have include some code for learn test and try
+		/// Set the timer Function,,
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+        /// 
+        bool isConnected()
+        {
+            bool i = false; // Initialize variable as false
+            android.UpdateDeviceList(); // Update connected device list
+            if (android.HasConnectedDevices) // Check for connected devices
+            {
+                serial = android.ConnectedDevices[0];
+                i = true; // It is connected
+            }
+            else
+                i = false; // It is not connected
+            return i; // Return as function says
+        }
+
+        /// <summary>
+        /// Set the work of background work, What it will do....
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
-        //seup a file dialog to load a file or folder
-        private void button_Click(object sender, EventArgs e)
+        /// 
+        void Timer1Tick(object sender, EventArgs e)
         {
-            FolderBrowserDialog backupfolder = new FolderBrowserDialog();
-            backupfolder.Description = "Choose backup location";
-            if (backupfolder.ShowDialog() == DialogResult.OK)
+            if (!backgroundWorker1.IsBusy) // Check if backgroud worker is NOT (indicated by ! at start) busy otherwise both process may collide with each other
             {
-                textbox1.Text = backupfolder.SelectedPath + "\\backup.ab";
+                backgroundWorker1.RunWorkerAsync(); // Run Background worker, it will automatically prevent Application from hangs as it runs in background
             }
-        }
-        /// <summary>
-        /// run a Process using below code
-        /// </summary>
-        /// <param name="Commands"></param>
-        public void run_process(string Commands)
-        {
-            var p = new Process(); // Declaring new process
-
-            // Defining the process, setting its parameters
-            p.StartInfo.FileName = "cmd.exe"; // Passing main function to cmd.exe
-            p.StartInfo.Arguments = "/c " + Commands; // Commands string passed here. /c argument is used to passed parameters explicitly.
-            p.StartInfo.CreateNoWindow = true; // No displaying a window
-            p.StartInfo.UseShellExecute = false; // No using cmd.exe to execute shell
-            p.StartInfo.RedirectStandardOutput = true;
-            p.Start(); // Starting the process
-            do
-            {
-                Application.DoEvents(); // This will prevent application from hang
-            } while (!p.HasExited); // Will wait until process been released from memory
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -68,11 +85,10 @@ namespace Main
         }
         private void Checker_Tick(object sender, EventArgs e)
         {
-
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
+         
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -205,6 +221,24 @@ namespace Main
         {
 
         }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if (isConnected())
+            {
+                pictureBox1.BackColor = Color.Green; // Setting color to green
+            }
+            else
+            {
+                pictureBox1.BackColor = Color.Red; // Setting color to Red as not connected
+            }
+            /// <summary>
+            /// Set the timer Function,,
+            /// </summary>
+            /// <param name="sender"></param>
+            /// <param name="e"></param>
+        }
+
         private void label3_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -233,8 +267,8 @@ namespace Main
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            
-            
+            ReleaseCapture();
+            SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -278,11 +312,16 @@ namespace Main
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
-           
-            
+            ReleaseCapture();
+            SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
         }
 
         private void userControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textbox1_TextChanged(object sender, EventArgs e)
         {
 
         }

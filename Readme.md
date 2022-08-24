@@ -65,14 +65,14 @@ keep textbox data and send your comment
                 }</code>
 
 
-MTK Process:
+**MTK Process:**
 Click START button and then Connect
 
-QCOM Process:
+**QCOM Process:**
 connect Phone wait for port detection and Click START button
 
-Fastboot Process:
+**Fastboot Process:**
 Must Connect Phone in fastbot Mod and then Click START button
 
-Samsung Download:
+**Samsung Download:**
 connect Phone in download mod, load File click Download

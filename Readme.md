@@ -6,7 +6,7 @@ Supported Phones List (QCOM Only):
 <a href="https://romprovider.com/realme-supported-model-functions/">Realme</a>
 <a href="https://github.com/jeck24India/Motorola-unbrick-tool">Motorola</a>
 
-Samsung: A02s, A11, A70, A72, M11, A52, A015F (via EDL) FRP on all samsung (*#0#*)
+Samsung: A02s, A11, A70, A72, M11, A52, A015F (via EDL) FRP on all samsung
 
 Asus: ROG5, ROG6
 

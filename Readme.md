@@ -14,7 +14,7 @@ LG: G5, V60
 
 Meizu: 16th, Note 8
 
-Nokia: 8,8 sirocco, 2.1, 2v,6.1,6.1 plus, 7.1, 7.1 plus, x2, x6, x71, 5,6
+Nokia: 8,8 sirocco, 2.1, 2v,6.1,6.1 plus, 7.1, 7.1 plus, x2, x6, x71, 5,6 (tested only with some model)
 
 OnePlus: Nord N20 5G, CE2 Lite 5G, 7T, 8T, 9, X, N100
 

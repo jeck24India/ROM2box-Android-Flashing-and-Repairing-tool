@@ -26,6 +26,10 @@ Huawei: 30+ qcom Phones
 
 Other 700+ Model via Auto Mod
 
+Supported Functions:
+
+Flash Firmware on Download Disabled Phones, Read Firmware, Erase efs , Reset FRP, Erase Mi Account permanent (using patched Modem), Erase userdata, unlock bootloader via EDL (some Model), bypass bootloader (realme X2, X3, X3 Zuper Zoom, redmi 5a and Many more xiaomi phones & flash twrp on locked bootloader)
+
 **MTK Process:**
 Click START button and then Connect
 

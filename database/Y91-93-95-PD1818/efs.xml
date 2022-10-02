@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<data>
+<erase SECTOR_SIZE_IN_BYTES="512" num_partition_sectors="5120" physical_partition_number="0" start_sector="373784" />
+<erase SECTOR_SIZE_IN_BYTES="512" num_partition_sectors="5120" physical_partition_number="0" start_sector="378904" />
+<erase SECTOR_SIZE_IN_BYTES="512" num_partition_sectors="5120" physical_partition_number="0" start_sector="393280" />
+</data>

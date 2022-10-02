@@ -1,1 +1,1 @@
-files can be execuated from ROM2box V3.0 & Newer
+for ROM2box V3.0 & Newer

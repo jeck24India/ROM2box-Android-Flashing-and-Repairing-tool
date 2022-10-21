@@ -1,4 +1,5 @@
-code up to 2.3
+code for 2.3
+
 Supported Phones List (QCOM Only):
 
 <a href="https://romprovider.com/oppo-supported-model-functions/">Oppo</a>

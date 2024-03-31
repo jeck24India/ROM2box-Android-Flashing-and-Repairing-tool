@@ -1,5 +1,5 @@
 code for 2.3
-
+Note: please use older versio if you are looking for specific model, New Version don't provide any option to select a specific model
 Supported Phones List (QCOM Only):
 
 <a href="https://romprovider.com/oppo-supported-model-functions/">Oppo</a>

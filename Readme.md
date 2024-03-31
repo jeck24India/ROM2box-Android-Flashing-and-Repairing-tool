@@ -1,12 +1,7 @@
 code for 2.3
-Note: please use older versio if you are looking for specific model, New Version don't provide any option to select a specific model
-Supported Phones List (QCOM Only):
 
-<a href="https://romprovider.com/oppo-supported-model-functions/">Oppo</a>
-<a href="https://romprovider.com/vivo-supported-model-functions/">Vivo</a>
-<a href="https://romprovider.com/xiaomi-supported-model-functions/">Xiaomi</a>
-<a href="https://romprovider.com/realme-supported-model-functions/">Realme</a>
-<a href="https://github.com/jeck24India/Motorola-unbrick-tool">Motorola</a>
+**Note:** please use older version if you are looking for specific model, New Version don't provide any option to select a specific model
+Supported Phones List (QCOM Only):
 
 Samsung: A02s, A11, A70, A72, M11, A52, A015F (via EDL) FRP on all samsung
 

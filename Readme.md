@@ -32,4 +32,6 @@ A comprehensive flashing and partition management utility specifically optimized
 
 Heartfelt thanks to **@bkerler** for the incredible work on [mtkclient](). This project heavily relies on their contributions to the MediaTek development ecosystem.
 
+## for educational & repairing purpose only
+
 Downoad: https://romprovider.com/rom2box-download/

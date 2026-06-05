@@ -1,45 +1,35 @@
-code for 2.3
+# ⚡ ROM2box
+A comprehensive flashing and partition management utility specifically optimized for V5 devices. Powered by the foundational work of the open-source community.
 
-**Note:** please use older version if you are looking for specific model, New Version don't provide any option to select a specific model
-Supported Phones List (QCOM Only):
+## 🚀 Key Features
 
-Samsung: A02s, A11, A70, A72, M11, A52, A015F (via EDL) FRP on all samsung
+| Mode | Functionality | Capabilities |
+| :--- | :--- | :--- |
+| **📟 MTK** | Core Flashing & Preloader | • Support for **V5 devices only**<br>• Custom preloader compatibility<br>• Read, Flash, and Erase |
+| **🤖 ADB** | Root Partition Management | • Advanced Partition Manager<br>• Partition Backup & Restore *(Root required)* |
+| **⚡ Fastboot** | Diagnostics & Flashing | • Complete Partition Manager<br>• Read Device Info<br>• Flash & Erase partitions<br>• Remove screen/device locks |
+| **🐉 Qualcomm** | Firmware Flashing | • Full stock firmware flashing support |
 
-Asus: ROG5, ROG6
+---
 
-LG: G5, V60
+## 🛠️ Detailed Overview
 
-Meizu: 16th, Note 8
+### 🔹 MediaTek (MTK) Engine
+* **Partition Management:** Deep access to partition structures.
+* **Flashing Operations:** Seamlessly write, read back, or completely wipe partitions.
+* **Custom Preloaders:** Load your own preloader files to bypass restrictions or unbrick devices.
 
-Nokia: 8,8 sirocco, 2.1, 2v,6.1,6.1 plus, 7.1, 7.1 plus, x2, x6, x71, 5,6 (tested only with some model)
+### 🔹 ADB & Fastboot Toolkit
+* **Security Operations:** One-click device lock removal via Fastboot mode.
+* **Safe Backups:** Safeguard critical partition blocks before making system updates.
 
-OnePlus: Nord N20 5G, CE2 Lite 5G, 7T, 8T, 9, X, N100
+### 🔹 Qualcomm Flasher
+* Direct firmware deployment designed for quick recovery and upgrading.
 
-Sharp: Aquos s2, s3, s3 mini
+---
 
-ZTE: Blade V9
+## 🤝 Credits & Acknowledgments
 
-Huawei: 30+ qcom Phones
+Heartfelt thanks to **@bkerler** for the incredible work on [mtkclient](https://github.com). This project heavily relies on their contributions to the MediaTek development ecosystem.
 
-Other 700+ Model via Auto Mod
-
-Supported Functions QCOM:
-
-Flash Firmware on Download Disabled Phones, Read Firmware, Erase efs , Reset FRP, Read qcn, restore qcn, Erase Mi Account permanent (using patched Modem), Erase userdata, unlock bootloader via EDL (some Model), bypass bootloader (realme X2, X3, X3 Zuper Zoom, redmi 5a and Many more xiaomi phones & flash twrp on locked bootloader), remove demo via edl (some oppo vivo phones)
-
-for Mediatek MTK Client Integrated
-
-unisoc:
-Flash Pac Firmware, Erase FRP itel, tecno, infinix
-
-**MTK Process:**
-Click START button and then Connect
-
-**QCOM Process:**
-connect Phone wait for port detection and Click START button
-
-**Fastboot Process:**
-Must Connect Phone in fastbot Mod and then Click START button
-
-**Samsung Download:**
-connect Phone in download mod, load File click Download
+Downoad: https://romprovider.com/rom2box-download/

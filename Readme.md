@@ -30,6 +30,6 @@ A comprehensive flashing and partition management utility specifically optimized
 
 ## 🤝 Credits & Acknowledgments
 
-Heartfelt thanks to **@bkerler** for the incredible work on [mtkclient](https://github.com). This project heavily relies on their contributions to the MediaTek development ecosystem.
+Heartfelt thanks to **@bkerler** for the incredible work on [mtkclient](). This project heavily relies on their contributions to the MediaTek development ecosystem.
 
 Downoad: https://romprovider.com/rom2box-download/

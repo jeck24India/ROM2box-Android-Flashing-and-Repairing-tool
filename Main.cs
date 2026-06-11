@@ -1,26 +1,26 @@
-﻿using mtkclient.Tasks;
-using static LogService;
-using static mtkclient.USBFastConnect;
-
+﻿using mtkclient.library;
+using mtkclient.MTK.Client.Scatter;
+using mtkclient.Tasks;
+using Partition_Manager;
 using System;
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
 using System.IO;
+using System.Linq;
+using System.Management;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
-using System.Net;
-using System.Management;
-using System.Drawing;
-using System.Text;
+using static LogService;
+using static mtkclient.USBFastConnect;
 using static System.Collections.Specialized.BitVector32;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
-using Partition_Manager;
-using System.Collections.Concurrent;
-using System.Linq;
-using mtkclient.library;
-using mtkclient.MTK.Client.Scatter;
 
 namespace mtkclient
 {
@@ -205,27 +205,10 @@ namespace mtkclient
             if (fd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 TxtEMI.Text = fd.FileName;
-                TxtEMIOneClick.Text = fd.FileName;
+             
             }
         }
 
-        private void BtnEMI2_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog fd = new OpenFileDialog();
-            fd.Title = "Select EMI | Preloader File";
-            fd.InitialDirectory = System.Environment.GetFolderPath(
-                Environment.SpecialFolder.MyComputer
-            );
-            fd.FileName = "*.*";
-            fd.Filter = "Preloader file |*.bin*;";
-            fd.FilterIndex = 1;
-            fd.RestoreDirectory = true;
-            if (fd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                TxtEMI.Text = fd.FileName;
-                TxtEMIOneClick.Text = fd.FileName;
-            }
-        }
 
         private void BtnBrowse_Click(object sender, EventArgs e)
         {
@@ -276,108 +259,9 @@ namespace mtkclient
             }
         }
 
-        private async void BtnFormatUserdata_Click(object sender, EventArgs e)
-        {
-            log.Clear();
-            cts = new CancellationTokenSource();
-            var token = cts.Token;
-            Main.Logger.Write("Formating Userdata :", Status.SUCCESS, false);
-            if (CkBromReady.Checked)
-            {
-                await Task.Run(() => MtkTask.FormatUserdata(token));
-            }
-            else
-            {
-                await Task.Run(() => MtkTask.InitAsync(token));
-                await Task.Run(() => MtkTask.FormatUserdata(token));
-            }
-            Main.Logger.Write("OK", Status.SUCCESS, true);
-            Main.Logger.Write(" ", Status.SUCCESS, true);
-            Main.Logger.Write("Task Completed...", Status.SUCCESS, true);
-        }
 
-        private async void BtnFormatUserdataFRP_Click(object sender, EventArgs e)
-        {
-            Main.Logger.Write("removed in public code", Status.SUCCESS, true);
-        }
 
-        private async void BtnFormatFromRecovery_Click(object sender, EventArgs e)
-        {
-            log.Clear();
-            cts = new CancellationTokenSource();
-            var token = cts.Token;
-            Main.Logger.Write("Format From Recovery :", Status.SUCCESS, false);
-            if (CkBromReady.Checked)
-            {
-                await Task.Run(() => MtkTask.FormatFromRecovery(token));
-            }
-            else
-            {
-                await Task.Run(() => MtkTask.InitAsync(token));
-                await Task.Run(() => MtkTask.FormatFromRecovery(token));
-            }
-            Main.Logger.Write("OK", Status.SUCCESS, true);
-            Main.Logger.Write(" ", Status.SUCCESS, true);
-            Main.Logger.Write("Task Completed...", Status.SUCCESS, true);
-        }
 
-        private async void BtnFormatFromRecoveryFRP_Click(object sender, EventArgs e)
-        {
-            log.Clear();
-            cts = new CancellationTokenSource();
-            var token = cts.Token;
-            Main.Logger.Write("Format From Recovery & Erase FRP :", Status.SUCCESS, false);
-            if (CkBromReady.Checked)
-            {
-                await Task.Run(() => MtkTask.FormatFromRecoveryFRP(token));
-            }
-            else
-            {
-                await Task.Run(() => MtkTask.InitAsync(token));
-                await Task.Run(() => MtkTask.FormatFromRecoveryFRP(token));
-            }
-            Main.Logger.Write("OK", Status.SUCCESS, true);
-            Main.Logger.Write(" ", Status.SUCCESS, true);
-            Main.Logger.Write("Task Completed...", Status.SUCCESS, true);
-        }
-
-        private async void BtnEraseFRP_Click(object sender, EventArgs e)
-        {
-            Main.Logger.Write("sorry, removed from public code", Status.SUCCESS, true);
-        }
-
-        private async void BtnBackupNV_Click(object sender, EventArgs e)
-        {
-            string folder;
-            var folderBrowserDialog = new FolderBrowserDialog() { ShowNewFolderButton = true };
-            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                log.Clear();
-                folder = folderBrowserDialog.SelectedPath;
-
-                cts = new CancellationTokenSource();
-                var token = cts.Token;
-
-                Main.Logger.Write("Backuping NV :", Status.SUCCESS, false);
-                if (CkBromReady.Checked)
-                {
-                    await Task.Run(() => MtkTask.BackupNV(folder, token));
-                }
-                else
-                {
-                    await Task.Run(() => MtkTask.InitAsync(token));
-                    await Task.Run(() => MtkTask.BackupNV(folder, token));
-                }
-                Main.Logger.Write("OK", Status.SUCCESS, true);
-                Main.Logger.Write(" ", Status.SUCCESS, true);
-                Main.Logger.Write("Task Completed...", Status.SUCCESS, true);
-            }
-        }
-
-        private async void BtnEraseNV_Click(object sender, EventArgs e)
-        {
-            Main.Logger.Write("sorry, removed from public code", Status.SUCCESS, true);
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -528,67 +412,45 @@ namespace mtkclient
             guna2GradientButton2.Enabled = true;
         }
 
-        private void Main_Load(object sender, EventArgs e)
+        private async void Main_Load(object sender, EventArgs e)
         {
+            // 1. Change the URL to '://githubusercontent.com' to get pure text, not HTML.
+            string statusUrl = "https://://githubusercontent.com/jeck24India/ROM2box-Android-Flashing-and-Repairing-tool/main/status.txt";
+
             try
             {
-                WebClient loginshit = new WebClient();
-                string str = loginshit.DownloadString("https://romprovider.com/wp-content/rom2/qlm.txt");
-                if (str.Contains("update"))
+                using (HttpClient client = new HttpClient())
                 {
-                    Process.Start("https://romprovider.com/rom2box-download/");
-                    MessageBox.Show("update Downloaded, Please delete QCOMFlasherPro.exe and extract update.zip", "QLMFlasherPro.COM", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Application.Exit();
+                    // Set a quick timeout (e.g., 5 seconds) so the app doesn't freeze waiting on slow internet
+                    client.Timeout = TimeSpan.FromSeconds(5);
 
-                }
-                if (str.Contains("offline"))
-                {
-                    string[] urls = 
-                     {
-                        "https://romprovider.com/backup-boot-img-mediatek-devices/",
-                        "https://romprovider.com/mediatek-preloader-install-mediatek-preloader-driver/",
-                        "https://romprovider.com/repair-mediatek-gpt-pgpt-partition/",
-                        "https://romprovider.com/use-maui-meta/",
-                        "https://romprovider.com/mediatek-brom-reboot-brom-mod/",
-                        "https://romprovider.com/mediatek-frp-support/",
-                        "https://romprovider.com/enable-qcom-diag-port/",
-                        "https://romprovider.com/mediatek-brom-reboot-brom-mod/",
-                        "https://romprovider.com/unisoc-flash-tool-all-version/",
-                        "https://romprovider.com/unlock-bootloader-new-unisoc-devices-t7510/"
-                    };
-                    Random random = new Random();
-                    int randomIndex = random.Next(urls.Length);
-                    string selectedUrl = urls[randomIndex];
-                    dojob(selectedUrl);
-                }
-                else
-                {
+                    string statusText = await client.GetStringAsync(statusUrl);
 
-                }
-            }
-            catch
-            {
-                Logger.Write("No connection you may miss updates", Status.SUCCESS, true);
-                Application.Exit();
+                    // Trim spaces and lowercase it to avoid formatting mistakes
+                    if (statusText.Trim().ToLower().Contains("update"))
+                    {
+                        Process.Start(new ProcessStartInfo
+                        {
+                            FileName = "https://romprovider.com/rom2box-download/",
+                            UseShellExecute = true // Required for .NET Core / modern Windows forms
+                        });
 
-            };
-        }
-        static void dojob(string url)
-        {
-            try
-            {
-                // Open the URL in the default web browser
-                Process.Start(url);
+                        MessageBox.Show("A critical update is required. Please download the latest version to continue.", "ROM2box Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Application.Exit();
+                        return;
+                    }
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error opening URL {url}: {ex.Message}");
+
             }
         }
 
+
         private void button2_Click(object sender, EventArgs e)
         {
-            Process.Start("https://t.me/rom2box_updates");
+           
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -763,14 +625,7 @@ namespace mtkclient
                         string str3 = str2.Replace("  storage_info  =  total_blocks  ", "Total Blocks").Replace("=TARGETSAID=", "");
                         this.SendLog("  " + str3, new Color?(Color.Yellow));
 
-                        if (str3.Contains("block_size  =512") == true)
-                        {
-                            frp.Checked = true;
-                        }
-                        if (str3.Contains("block_size  =4096") == true)
-                        {
-                            account.Checked = true;
-                        }
+                        
                     }
                 }));
                 RichTextBox.CheckForIllegalCrossThreadCalls = false;
@@ -1120,30 +975,8 @@ namespace mtkclient
                     this.SendLog("there was a error to Process flash", new Color?(Color.Red));
                 }
             }
-            if (frp.Checked == true)
-            {
-                this.SendLog("Erasing FRP > ", new Color?(Color.Black), breakline: false);
-                if (checkBox1.Checked == true)
-                {
-                    await erasepart("bin\\emmcdl.exe -p \"" + port.Text + "\" -f \"" + textBox4.Text + "\" -e config -MemoryName emmc", progress);
-                }
-                if (checkBox2.Checked == true)
-                {
-                    this.SendLog("UFS Not support Please use QLMFlasherPro", new Color?(Color.Red));
-                }
-            }
-            if (account.Checked == true)
-            {
-                this.SendLog("Erasing Mi Account > ", new Color?(Color.Black), breakline: false);
-                if (checkBox1.Checked == true)
-                {
-                    await erasepart("bin\\emmcdl.exe -p \"" + port.Text + "\" -f \"" + textBox4.Text + "\" -e persist -MemoryName emmc", progress);
-                }
-                if (checkBox2.Checked == true)
-                {
-                    this.SendLog("UFS Not support Please use QLMFlasherPro", new Color?(Color.Red));
-                }
-            }
+           
+            
         }
         private void timer5_Tick(object sender, EventArgs e)
         {
@@ -1191,32 +1024,8 @@ namespace mtkclient
             if (fd.ShowDialog() == DialogResult.OK)
             {
                 textBox2.Text = fd.FileName;
-                textBox4.Text = fd.FileName;
+                
             }
-        }
-
-        private void guna2GradientButton8_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog fd = new OpenFileDialog
-            {
-                Title = "Firehose File",
-                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyComputer),
-                FileName = "*.*",
-                Filter = "all file |*.mbn;*.elf ",
-                FilterIndex = 2,
-                RestoreDirectory = true
-            };
-            if (fd.ShowDialog() == DialogResult.OK)
-            {
-                textBox2.Text = fd.FileName;
-                textBox4.Text = fd.FileName;
-            }
-        }
-
-        private void guna2GradientButton9_Click(object sender, EventArgs e)
-        {
-            log.Clear();
-            Main.Logger.Write("sorry, removed from public code", Status.SUCCESS, true);
         }
 
         private void account_CheckedChanged(object sender, EventArgs e)
@@ -1350,14 +1159,6 @@ namespace mtkclient
             {
                 runadb("bin\\python\\edl.exe reboot-edl");
             }
-            if (mycheck29.Checked == true)
-            {
-                Main.Logger.Write("sorry, removed from public code", Status.SUCCESS, true);
-            }
-            if (mycheck28.Checked == true)
-            {
-                Main.Logger.Write("sorry, removed from public code", Status.SUCCESS, true);
-            }
             if (mycheck27.Checked == true)
             {
                 runadb("bin\\fastboot.exe flashing unlock_critical");
@@ -1402,9 +1203,5 @@ namespace mtkclient
             Process.Start("https://t.me/ROM2box_Logs");
         }
 
-        private void guna2GradientButton10_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("function not integrated yet");
-        }
     }
 }

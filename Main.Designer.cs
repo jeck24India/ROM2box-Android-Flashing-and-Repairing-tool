@@ -49,25 +49,7 @@ namespace mtkclient
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.BtnEraseFRPMiCloud = new System.Windows.Forms.Button();
-            this.BtnEraseFRP = new System.Windows.Forms.Button();
-            this.BtnFormatUserdataFRP = new System.Windows.Forms.Button();
-            this.BtnBackupNV = new System.Windows.Forms.Button();
-            this.BtnFormatFromRecoveryFRP = new System.Windows.Forms.Button();
-            this.BtnFormatFromRecovery = new System.Windows.Forms.Button();
-            this.BtnFormatUserdata = new System.Windows.Forms.Button();
-            this.BtnEMI2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TxtEMIOneClick = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.account = new System.Windows.Forms.CheckBox();
-            this.frp = new System.Windows.Forms.CheckBox();
-            this.guna2GradientButton8 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.guna2GradientButton9 = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.customprogressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.flash = new System.Windows.Forms.CheckBox();
@@ -83,7 +65,6 @@ namespace mtkclient
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.guna2GradientButton10 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientButton7 = new Guna.UI2.WinForms.Guna2GradientButton();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.guna2GradientButton16 = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -100,12 +81,10 @@ namespace mtkclient
             this.mycheck33 = new System.Windows.Forms.RadioButton();
             this.mycheck46 = new System.Windows.Forms.RadioButton();
             this.mycheck30 = new System.Windows.Forms.RadioButton();
-            this.mycheck29 = new System.Windows.Forms.RadioButton();
             this.mycheck31 = new System.Windows.Forms.RadioButton();
             this.mycheck32 = new System.Windows.Forms.RadioButton();
             this.mycheck27 = new System.Windows.Forms.RadioButton();
             this.mycheck36 = new System.Windows.Forms.RadioButton();
-            this.mycheck28 = new System.Windows.Forms.RadioButton();
             this.mycheck26 = new System.Windows.Forms.RadioButton();
             this.mycheck37 = new System.Windows.Forms.RadioButton();
             this.guna2GradientButton14 = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -116,14 +95,11 @@ namespace mtkclient
             this.port = new System.Windows.Forms.TextBox();
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataViewmtk)).BeginInit();
-            this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -279,7 +255,6 @@ namespace mtkclient
             // 
             this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
@@ -594,141 +569,9 @@ namespace mtkclient
             this.Column3.Name = "Column3";
             this.Column3.Width = 280;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tabPage2.Controls.Add(this.BtnEraseFRPMiCloud);
-            this.tabPage2.Controls.Add(this.BtnEraseFRP);
-            this.tabPage2.Controls.Add(this.BtnFormatUserdataFRP);
-            this.tabPage2.Controls.Add(this.BtnBackupNV);
-            this.tabPage2.Controls.Add(this.BtnFormatFromRecoveryFRP);
-            this.tabPage2.Controls.Add(this.BtnFormatFromRecovery);
-            this.tabPage2.Controls.Add(this.BtnFormatUserdata);
-            this.tabPage2.Controls.Add(this.BtnEMI2);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.TxtEMIOneClick);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(556, 391);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "One Click Functions";
-            // 
-            // BtnEraseFRPMiCloud
-            // 
-            this.BtnEraseFRPMiCloud.BackColor = System.Drawing.Color.Maroon;
-            this.BtnEraseFRPMiCloud.ForeColor = System.Drawing.Color.White;
-            this.BtnEraseFRPMiCloud.Location = new System.Drawing.Point(315, 39);
-            this.BtnEraseFRPMiCloud.Name = "BtnEraseFRPMiCloud";
-            this.BtnEraseFRPMiCloud.Size = new System.Drawing.Size(222, 32);
-            this.BtnEraseFRPMiCloud.TabIndex = 37;
-            this.BtnEraseFRPMiCloud.Text = "Wipe FRP +  MiCloud";
-            this.BtnEraseFRPMiCloud.UseVisualStyleBackColor = false;
-            this.BtnEraseFRPMiCloud.Click += new System.EventHandler(this.BtnEraseFRP_Click);
-            // 
-            // BtnEraseFRP
-            // 
-            this.BtnEraseFRP.BackColor = System.Drawing.Color.Maroon;
-            this.BtnEraseFRP.ForeColor = System.Drawing.Color.White;
-            this.BtnEraseFRP.Location = new System.Drawing.Point(3, 77);
-            this.BtnEraseFRP.Name = "BtnEraseFRP";
-            this.BtnEraseFRP.Size = new System.Drawing.Size(143, 32);
-            this.BtnEraseFRP.TabIndex = 37;
-            this.BtnEraseFRP.Text = "Erase FRP";
-            this.BtnEraseFRP.UseVisualStyleBackColor = false;
-            this.BtnEraseFRP.Click += new System.EventHandler(this.BtnEraseFRP_Click);
-            // 
-            // BtnFormatUserdataFRP
-            // 
-            this.BtnFormatUserdataFRP.BackColor = System.Drawing.Color.Maroon;
-            this.BtnFormatUserdataFRP.ForeColor = System.Drawing.Color.White;
-            this.BtnFormatUserdataFRP.Location = new System.Drawing.Point(152, 39);
-            this.BtnFormatUserdataFRP.Name = "BtnFormatUserdataFRP";
-            this.BtnFormatUserdataFRP.Size = new System.Drawing.Size(155, 32);
-            this.BtnFormatUserdataFRP.TabIndex = 37;
-            this.BtnFormatUserdataFRP.Text = "Wipe FRP + userdata";
-            this.BtnFormatUserdataFRP.UseVisualStyleBackColor = false;
-            this.BtnFormatUserdataFRP.Click += new System.EventHandler(this.BtnFormatUserdataFRP_Click);
-            // 
-            // BtnBackupNV
-            // 
-            this.BtnBackupNV.BackColor = System.Drawing.Color.Maroon;
-            this.BtnBackupNV.ForeColor = System.Drawing.Color.White;
-            this.BtnBackupNV.Location = new System.Drawing.Point(154, 77);
-            this.BtnBackupNV.Name = "BtnBackupNV";
-            this.BtnBackupNV.Size = new System.Drawing.Size(155, 32);
-            this.BtnBackupNV.TabIndex = 37;
-            this.BtnBackupNV.Text = "Backup NV";
-            this.BtnBackupNV.UseVisualStyleBackColor = false;
-            this.BtnBackupNV.Click += new System.EventHandler(this.BtnBackupNV_Click);
-            // 
-            // BtnFormatFromRecoveryFRP
-            // 
-            this.BtnFormatFromRecoveryFRP.Location = new System.Drawing.Point(362, 359);
-            this.BtnFormatFromRecoveryFRP.Name = "BtnFormatFromRecoveryFRP";
-            this.BtnFormatFromRecoveryFRP.Size = new System.Drawing.Size(186, 32);
-            this.BtnFormatFromRecoveryFRP.TabIndex = 37;
-            this.BtnFormatFromRecoveryFRP.Text = "Format From Recovery + Erase FRP";
-            this.BtnFormatFromRecoveryFRP.UseVisualStyleBackColor = true;
-            this.BtnFormatFromRecoveryFRP.Visible = false;
-            this.BtnFormatFromRecoveryFRP.Click += new System.EventHandler(this.BtnFormatFromRecoveryFRP_Click);
-            // 
-            // BtnFormatFromRecovery
-            // 
-            this.BtnFormatFromRecovery.Location = new System.Drawing.Point(7, 359);
-            this.BtnFormatFromRecovery.Name = "BtnFormatFromRecovery";
-            this.BtnFormatFromRecovery.Size = new System.Drawing.Size(220, 32);
-            this.BtnFormatFromRecovery.TabIndex = 37;
-            this.BtnFormatFromRecovery.Text = "Format From Recovery";
-            this.BtnFormatFromRecovery.UseVisualStyleBackColor = true;
-            this.BtnFormatFromRecovery.Visible = false;
-            this.BtnFormatFromRecovery.Click += new System.EventHandler(this.BtnFormatFromRecovery_Click);
-            // 
-            // BtnFormatUserdata
-            // 
-            this.BtnFormatUserdata.BackColor = System.Drawing.Color.Maroon;
-            this.BtnFormatUserdata.ForeColor = System.Drawing.Color.White;
-            this.BtnFormatUserdata.Location = new System.Drawing.Point(3, 39);
-            this.BtnFormatUserdata.Name = "BtnFormatUserdata";
-            this.BtnFormatUserdata.Size = new System.Drawing.Size(143, 32);
-            this.BtnFormatUserdata.TabIndex = 37;
-            this.BtnFormatUserdata.Text = "Wipe Userdata";
-            this.BtnFormatUserdata.UseVisualStyleBackColor = false;
-            this.BtnFormatUserdata.Click += new System.EventHandler(this.BtnFormatUserdata_Click);
-            // 
-            // BtnEMI2
-            // 
-            this.BtnEMI2.BackColor = System.Drawing.Color.Maroon;
-            this.BtnEMI2.ForeColor = System.Drawing.Color.White;
-            this.BtnEMI2.Location = new System.Drawing.Point(449, 6);
-            this.BtnEMI2.Name = "BtnEMI2";
-            this.BtnEMI2.Size = new System.Drawing.Size(99, 32);
-            this.BtnEMI2.TabIndex = 37;
-            this.BtnEMI2.Text = "Browse";
-            this.BtnEMI2.UseVisualStyleBackColor = false;
-            this.BtnEMI2.Click += new System.EventHandler(this.BtnEMI2_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(4, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 13);
-            this.label4.TabIndex = 36;
-            this.label4.Text = "Custom Preloader";
-            // 
-            // TxtEMIOneClick
-            // 
-            this.TxtEMIOneClick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.TxtEMIOneClick.Location = new System.Drawing.Point(128, 13);
-            this.TxtEMIOneClick.Name = "TxtEMIOneClick";
-            this.TxtEMIOneClick.Size = new System.Drawing.Size(315, 20);
-            this.TxtEMIOneClick.TabIndex = 35;
-            // 
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.tabPage3.Controls.Add(this.groupBox2);
             this.tabPage3.Controls.Add(this.groupBox1);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
@@ -736,119 +579,6 @@ namespace mtkclient
             this.tabPage3.Size = new System.Drawing.Size(556, 391);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Qualcomm";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.Silver;
-            this.groupBox2.Controls.Add(this.account);
-            this.groupBox2.Controls.Add(this.frp);
-            this.groupBox2.Controls.Add(this.guna2GradientButton8);
-            this.groupBox2.Controls.Add(this.guna2GradientButton9);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Location = new System.Drawing.Point(6, 240);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(544, 145);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "ONE CLICK";
-            // 
-            // account
-            // 
-            this.account.AutoSize = true;
-            this.account.Location = new System.Drawing.Point(118, 77);
-            this.account.Name = "account";
-            this.account.Size = new System.Drawing.Size(122, 17);
-            this.account.TabIndex = 158;
-            this.account.Text = "Mi Account Reset";
-            this.account.UseVisualStyleBackColor = true;
-            this.account.CheckedChanged += new System.EventHandler(this.account_CheckedChanged);
-            // 
-            // frp
-            // 
-            this.frp.AutoSize = true;
-            this.frp.Location = new System.Drawing.Point(9, 77);
-            this.frp.Name = "frp";
-            this.frp.Size = new System.Drawing.Size(80, 17);
-            this.frp.TabIndex = 157;
-            this.frp.Text = "FRP Reset";
-            this.frp.UseVisualStyleBackColor = true;
-            this.frp.CheckedChanged += new System.EventHandler(this.frp_CheckedChanged);
-            // 
-            // guna2GradientButton8
-            // 
-            this.guna2GradientButton8.Animated = true;
-            this.guna2GradientButton8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton8.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton8.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.guna2GradientButton8.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2GradientButton8.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.guna2GradientButton8.CustomImages.ImageSize = new System.Drawing.Size(118, 24);
-            this.guna2GradientButton8.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton8.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton8.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton8.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton8.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton8.FillColor = System.Drawing.Color.Maroon;
-            this.guna2GradientButton8.FillColor2 = System.Drawing.Color.Purple;
-            this.guna2GradientButton8.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton8.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton8.ImageSize = new System.Drawing.Size(118, 24);
-            this.guna2GradientButton8.Location = new System.Drawing.Point(446, 19);
-            this.guna2GradientButton8.Margin = new System.Windows.Forms.Padding(1);
-            this.guna2GradientButton8.Name = "guna2GradientButton8";
-            this.guna2GradientButton8.Size = new System.Drawing.Size(85, 20);
-            this.guna2GradientButton8.TabIndex = 155;
-            this.guna2GradientButton8.Text = "Choose";
-            this.guna2GradientButton8.UseTransparentBackground = true;
-            this.guna2GradientButton8.Click += new System.EventHandler(this.guna2GradientButton8_Click);
-            // 
-            // guna2GradientButton9
-            // 
-            this.guna2GradientButton9.Animated = true;
-            this.guna2GradientButton9.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton9.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton9.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.guna2GradientButton9.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2GradientButton9.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.guna2GradientButton9.CustomImages.ImageSize = new System.Drawing.Size(118, 24);
-            this.guna2GradientButton9.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton9.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton9.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton9.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton9.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton9.FillColor = System.Drawing.Color.Maroon;
-            this.guna2GradientButton9.FillColor2 = System.Drawing.Color.Purple;
-            this.guna2GradientButton9.Font = new System.Drawing.Font("Segoe UI Variable Text", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton9.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton9.ImageSize = new System.Drawing.Size(118, 24);
-            this.guna2GradientButton9.Location = new System.Drawing.Point(419, 62);
-            this.guna2GradientButton9.Margin = new System.Windows.Forms.Padding(1);
-            this.guna2GradientButton9.Name = "guna2GradientButton9";
-            this.guna2GradientButton9.Size = new System.Drawing.Size(112, 32);
-            this.guna2GradientButton9.TabIndex = 154;
-            this.guna2GradientButton9.Text = "DO Work";
-            this.guna2GradientButton9.UseTransparentBackground = true;
-            this.guna2GradientButton9.Click += new System.EventHandler(this.guna2GradientButton9_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 21);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Firehose File";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox4.Location = new System.Drawing.Point(144, 19);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(288, 20);
-            this.textBox4.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -868,7 +598,7 @@ namespace mtkclient
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(544, 228);
+            this.groupBox1.Size = new System.Drawing.Size(544, 379);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Firmware Flash";
@@ -1062,7 +792,6 @@ namespace mtkclient
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Silver;
-            this.groupBox3.Controls.Add(this.guna2GradientButton10);
             this.groupBox3.Controls.Add(this.guna2GradientButton7);
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
@@ -1070,34 +799,6 @@ namespace mtkclient
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Menu";
-            // 
-            // guna2GradientButton10
-            // 
-            this.guna2GradientButton10.Animated = true;
-            this.guna2GradientButton10.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton10.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2GradientButton10.BorderStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
-            this.guna2GradientButton10.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
-            this.guna2GradientButton10.CustomImages.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.guna2GradientButton10.CustomImages.ImageSize = new System.Drawing.Size(118, 24);
-            this.guna2GradientButton10.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton10.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2GradientButton10.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton10.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2GradientButton10.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2GradientButton10.FillColor = System.Drawing.Color.Maroon;
-            this.guna2GradientButton10.FillColor2 = System.Drawing.Color.Purple;
-            this.guna2GradientButton10.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2GradientButton10.ForeColor = System.Drawing.Color.White;
-            this.guna2GradientButton10.ImageSize = new System.Drawing.Size(118, 24);
-            this.guna2GradientButton10.Location = new System.Drawing.Point(257, 30);
-            this.guna2GradientButton10.Margin = new System.Windows.Forms.Padding(1);
-            this.guna2GradientButton10.Name = "guna2GradientButton10";
-            this.guna2GradientButton10.Size = new System.Drawing.Size(249, 36);
-            this.guna2GradientButton10.TabIndex = 157;
-            this.guna2GradientButton10.Text = "ADB APP Manager and debloater";
-            this.guna2GradientButton10.UseTransparentBackground = true;
-            this.guna2GradientButton10.Click += new System.EventHandler(this.guna2GradientButton10_Click);
             // 
             // guna2GradientButton7
             // 
@@ -1118,10 +819,10 @@ namespace mtkclient
             this.guna2GradientButton7.Font = new System.Drawing.Font("Segoe UI Variable Text", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GradientButton7.ForeColor = System.Drawing.Color.White;
             this.guna2GradientButton7.ImageSize = new System.Drawing.Size(118, 24);
-            this.guna2GradientButton7.Location = new System.Drawing.Point(15, 30);
+            this.guna2GradientButton7.Location = new System.Drawing.Point(4, 32);
             this.guna2GradientButton7.Margin = new System.Windows.Forms.Padding(1);
             this.guna2GradientButton7.Name = "guna2GradientButton7";
-            this.guna2GradientButton7.Size = new System.Drawing.Size(204, 36);
+            this.guna2GradientButton7.Size = new System.Drawing.Size(545, 36);
             this.guna2GradientButton7.TabIndex = 156;
             this.guna2GradientButton7.Text = "Firmware backup Restore";
             this.guna2GradientButton7.UseTransparentBackground = true;
@@ -1268,12 +969,10 @@ namespace mtkclient
             this.groupBox8.Controls.Add(this.mycheck33);
             this.groupBox8.Controls.Add(this.mycheck46);
             this.groupBox8.Controls.Add(this.mycheck30);
-            this.groupBox8.Controls.Add(this.mycheck29);
             this.groupBox8.Controls.Add(this.mycheck31);
             this.groupBox8.Controls.Add(this.mycheck32);
             this.groupBox8.Controls.Add(this.mycheck27);
             this.groupBox8.Controls.Add(this.mycheck36);
-            this.groupBox8.Controls.Add(this.mycheck28);
             this.groupBox8.Controls.Add(this.mycheck26);
             this.groupBox8.Controls.Add(this.mycheck37);
             this.groupBox8.Location = new System.Drawing.Point(6, 6);
@@ -1352,7 +1051,7 @@ namespace mtkclient
             this.mycheck46.AutoSize = true;
             this.mycheck46.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mycheck46.ForeColor = System.Drawing.Color.Black;
-            this.mycheck46.Location = new System.Drawing.Point(191, 88);
+            this.mycheck46.Location = new System.Drawing.Point(12, 91);
             this.mycheck46.Name = "mycheck46";
             this.mycheck46.Size = new System.Drawing.Size(121, 17);
             this.mycheck46.TabIndex = 35;
@@ -1370,18 +1069,6 @@ namespace mtkclient
             this.mycheck30.TabIndex = 34;
             this.mycheck30.Text = "reboot edl 3";
             this.mycheck30.UseVisualStyleBackColor = true;
-            // 
-            // mycheck29
-            // 
-            this.mycheck29.AutoSize = true;
-            this.mycheck29.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mycheck29.ForeColor = System.Drawing.Color.Black;
-            this.mycheck29.Location = new System.Drawing.Point(11, 114);
-            this.mycheck29.Name = "mycheck29";
-            this.mycheck29.Size = new System.Drawing.Size(37, 17);
-            this.mycheck29.TabIndex = 33;
-            this.mycheck29.Text = "..";
-            this.mycheck29.UseVisualStyleBackColor = true;
             // 
             // mycheck31
             // 
@@ -1412,7 +1099,7 @@ namespace mtkclient
             this.mycheck27.AutoSize = true;
             this.mycheck27.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mycheck27.ForeColor = System.Drawing.Color.Black;
-            this.mycheck27.Location = new System.Drawing.Point(191, 114);
+            this.mycheck27.Location = new System.Drawing.Point(191, 91);
             this.mycheck27.Name = "mycheck27";
             this.mycheck27.Size = new System.Drawing.Size(181, 17);
             this.mycheck27.TabIndex = 30;
@@ -1424,24 +1111,12 @@ namespace mtkclient
             this.mycheck36.AutoSize = true;
             this.mycheck36.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mycheck36.ForeColor = System.Drawing.Color.Black;
-            this.mycheck36.Location = new System.Drawing.Point(11, 91);
+            this.mycheck36.Location = new System.Drawing.Point(12, 68);
             this.mycheck36.Name = "mycheck36";
             this.mycheck36.Size = new System.Drawing.Size(103, 17);
             this.mycheck36.TabIndex = 29;
             this.mycheck36.Text = "reboot system";
             this.mycheck36.UseVisualStyleBackColor = true;
-            // 
-            // mycheck28
-            // 
-            this.mycheck28.AutoSize = true;
-            this.mycheck28.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mycheck28.ForeColor = System.Drawing.Color.Black;
-            this.mycheck28.Location = new System.Drawing.Point(11, 66);
-            this.mycheck28.Name = "mycheck28";
-            this.mycheck28.Size = new System.Drawing.Size(37, 17);
-            this.mycheck28.TabIndex = 28;
-            this.mycheck28.Text = "..";
-            this.mycheck28.UseVisualStyleBackColor = true;
             // 
             // mycheck26
             // 
@@ -1450,9 +1125,9 @@ namespace mtkclient
             this.mycheck26.ForeColor = System.Drawing.Color.Black;
             this.mycheck26.Location = new System.Drawing.Point(11, 42);
             this.mycheck26.Name = "mycheck26";
-            this.mycheck26.Size = new System.Drawing.Size(103, 17);
+            this.mycheck26.Size = new System.Drawing.Size(79, 17);
             this.mycheck26.TabIndex = 27;
-            this.mycheck26.Text = "factory reset";
+            this.mycheck26.Text = "Wipe data";
             this.mycheck26.UseVisualStyleBackColor = true;
             // 
             // mycheck37
@@ -1551,25 +1226,12 @@ namespace mtkclient
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Maroon;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(710, 449);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(173, 26);
-            this.button3.TabIndex = 154;
-            this.button3.Text = "Remote Paid Service";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(992, 526);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.port);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.progressBar1);
@@ -1586,7 +1248,7 @@ namespace mtkclient
             this.MaximizeBox = false;
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ROM2box by ROMProvider.COM";
+            this.Text = "ROM2box V3.5";
             this.Load += new System.EventHandler(this.Main_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1594,11 +1256,7 @@ namespace mtkclient
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DataViewmtk)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -1633,17 +1291,6 @@ namespace mtkclient
         private TextBox TxtIMGBin;
         private CheckBox CkList;
         public DataGridView DataViewmtk;
-        private TabPage tabPage2;
-        public Button BtnFormatUserdataFRP;
-        public Button BtnBackupNV;
-        public Button BtnFormatFromRecoveryFRP;
-        public Button BtnFormatFromRecovery;
-        public Button BtnFormatUserdata;
-        public Button BtnEMI2;
-        private Label label4;
-        public TextBox TxtEMIOneClick;
-        public Button BtnEraseFRP;
-        public Button BtnEraseFRPMiCloud;
         private DataGridViewCheckBoxColumn Column0;
         private DataGridViewTextBoxColumn part;
         private DataGridViewTextBoxColumn Column1;
@@ -1668,13 +1315,6 @@ namespace mtkclient
         private Label label6;
         private TextBox textBox2;
         private TextBox textBox3;
-        private GroupBox groupBox2;
-        private CheckBox account;
-        private CheckBox frp;
-        public Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton8;
-        public Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton9;
-        private Label label7;
-        private TextBox textBox4;
         public Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton6;
         public Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton5;
         internal Timer timer2;
@@ -1690,7 +1330,6 @@ namespace mtkclient
         private TabPage tabPage4;
         private GroupBox groupBox3;
         public Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton7;
-        public Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton10;
         private TabPage tabPage5;
         private GroupBox groupBox8;
         public Guna.UI2.WinForms.Guna2GradientButton guna2GradientButton16;
@@ -1702,12 +1341,10 @@ namespace mtkclient
         private RadioButton mycheck33;
         private RadioButton mycheck46;
         private RadioButton mycheck30;
-        private RadioButton mycheck29;
         private RadioButton mycheck31;
         private RadioButton mycheck32;
         private RadioButton mycheck27;
         private RadioButton mycheck36;
-        private RadioButton mycheck28;
         private RadioButton mycheck26;
         private RadioButton mycheck37;
         internal DataGridView dataGridView3;
@@ -1716,7 +1353,6 @@ namespace mtkclient
         private DataGridViewTextBoxColumn filename;
         private DataGridViewTextBoxColumn start_sector;
         private OpenFileDialog openFileDialog1;
-        private Button button3;
     }
 }
 
